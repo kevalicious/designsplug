@@ -15,5 +15,10 @@ export class AppComponent {
   cartservice = inject(CartService);
   cartList = this.cartService.getItems();
   
+  
+
+	
+  
+  
   constructor(private cartService: CartService){}
 }
