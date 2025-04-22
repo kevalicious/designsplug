@@ -8,12 +8,12 @@ export class CartService {
 
   cart = signal<Product[]>([]);
 
-  addToCart(product: Product){
+  addToCart(product: Product) {
     this.cart.set([...this.cart(), product]);
     window.alert(product.product_name + ' has been added to cart!');
   }
 
-  getItems(){
+  getItems() {
     return this.cart;
   }
 
@@ -22,6 +22,9 @@ export class CartService {
   }
 
   
+ 
+
+
 
 
   constructor() { }
