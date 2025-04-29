@@ -20,14 +20,14 @@
                         <th class="column-5">Total</th>
                     </tr>
 
-                    @for(list of cartList(); track list.pid){
+                    @for(list of cartList(); track list.product_id){
                     <tr class="table-row">
                         <td class="column-1">
-                            <div class="cart-img-product b-rad-4 o-f-hidden" (click)="cartservice.removefromCart(list.pid)">
+                            <div class="cart-img-product b-rad-4 o-f-hidden" (click)="cartservice.removefromCart(list.product_id)">
                                 <img [src]="list.cover" alt="IMG-PRODUCT">
                             </div>
                         </td>
-                        <td class="column-2">{{list.product_name}}</td>
+                        <td class="column-2">{{list.name}}</td>
                         <td class="column-3">{{list.price}}</td>
                         <td class="column-4">
                             <div class="flex-w bo5 of-hidden w-size17">

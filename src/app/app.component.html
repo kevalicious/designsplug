@@ -51,14 +51,14 @@
                 <span class="linedivide1"></span>
 
                 <div class="header-wrapicon2">
-                    <img src="images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
+                    <img src="images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="ICON" >
                     <span class="header-icons-noti">{{ cartservice.cart().length }}</span>
 
                     <!-- Header cart noti -->
 					
                     <div class="header-cart header-dropdown">
                         <ul class="header-cart-wrapitem">
-                            @for(cartItem of cartList(); track cartItem.pid){
+                            @for(cartItem of cartList(); track cartItem.product_id){
                             <li class="header-cart-item">
                                 <div class="header-cart-item-img">
                                     <img [src]="cartItem.cover" alt="IMG">
@@ -66,7 +66,7 @@
 
                                 <div class="header-cart-item-txt">
                                     <a href="#" class="header-cart-item-name">
-                                        {{ cartItem.product_name }}
+                                        {{ cartItem.name }}
                                     </a>
 
                                     <span class="header-cart-item-info">
@@ -84,7 +84,7 @@
                         </ul>
 
                         <div class="header-cart-total">
-                            Total: $75.00
+                            {{ cartservice.totalPrice() }}
                         </div>
 
                         <div class="header-cart-buttons">
@@ -103,6 +103,8 @@
                             </div>
                         </div>
                     </div>
+                
+                    <!--endcartnot-->
 					
                 </div>
             </div>
@@ -128,14 +130,14 @@
 
                 <div class="header-wrapicon2">
                     
-                    <img src="images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
+                    <img src="images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="ICON" >
                     <span class="header-icons-noti"> {{ cartservice.cart().length }} </span>
                      
                     <!-- Header cart noti -->
                     <div class="header-cart header-dropdown">
                         <ul class="header-cart-wrapitem">
 
-                            @for(cartItem of cartList(); track cartItem.pid){
+                            @for(cartItem of cartList(); track cartItem.product_id){
                             <li class="header-cart-item">
                                 <div class="header-cart-item-img">
                                     <img [src]="cartItem.cover" alt="IMG">
@@ -143,7 +145,7 @@
 
                                 <div class="header-cart-item-txt">
                                     <a href="#" class="header-cart-item-name">
-                                        {{ cartItem.product_name }}
+                                        {{ cartItem.name }}
                                     </a>
 
                                     <span class="header-cart-item-info">
@@ -162,7 +164,7 @@
                         </ul>
 
                         <div class="header-cart-total">
-                            Total: $75.00
+                          {{ cartservice.totalPrice() }}
                         </div>
 
                         <div class="header-cart-buttons">
